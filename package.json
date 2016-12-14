@@ -1,0 +1,28 @@
+{
+  "name": "optimized-hash-map",
+  "version": "1.0.0",
+  "description": "Optimized hash map",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kfiron/optimized-hash-map.git"
+  },
+  "keywords": [
+    "map",
+    "hashmap",
+    "optimized"
+  ],
+  "author": "Kfir Bloch <kfirb@wix.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kfiron/optimized-hash-map/issues"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~3.1.0"
+  },
+  "homepage": "https://github.com/kfiron/optimized-hash-map#readme"
+}
