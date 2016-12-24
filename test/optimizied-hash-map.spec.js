@@ -21,6 +21,7 @@ describe('optimized hash map', () => {
     });
   });
 
+
   describe('has()', function () {
     it('should return false for check existence using has ', function () {
       expect(this.map.has(key)).to.be.false;
