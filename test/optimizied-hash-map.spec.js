@@ -62,5 +62,16 @@ describe('optimized hash map', () => {
     });
   });
 
+  describe('forEach()', function(){
+    it('foreach items', function(){
+      const object = {};
+      this.map.set(key, stringValue);
+      this.map.forEach((k, v) => {
+        object[k] = v;
+      });
+      expect(object[key]).to.be.equal(stringValue);
+    });
+  });
+
 
 });
