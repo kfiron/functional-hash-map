@@ -11,6 +11,8 @@ describe('optimized hash map', () => {
   const stringValue = 'value';
   const anotherKey = 'anotherKey';
   const anotherValue = 'anotherValue';
+  const anotherDifferentKey = 'anotherDifferentKey';
+  const anotherDifferentValue = 'anotherDifferentValue';
 
 
   describe('get and set by key', function () {
@@ -107,7 +109,22 @@ describe('optimized hash map', () => {
       expect(newMap.get(anotherKey)).to.be.equal(anotherValue);
     });
   });
-// some comment
+
+  describe('head(), last(), tail(), init()', function(){
+    function initMap(map){
+      map.set(key, stringValue);
+      map.set(anotherKey, anotherValue);
+      map.set(anotherDifferentKey, anotherDifferentValue);
+    }
+
+    it('head should return the first element', function(){
+      initMap(this.map);
+      const newMap = this.map.head();
+      expect(newMap.get(key)).to.be.equal(stringValue);
+      expect(newMap.size()).to.be.equal(1);
+    })
+
+  });
 
 
 
