@@ -117,19 +117,28 @@ describe('optimized hash map', () => {
       map.set(anotherDifferentKey, anotherDifferentValue);
     }
 
-    it('head should return the hashmap with only the first element', function(){
+    it('head() should return the hashmap with only the first element', function(){
       initMap(this.map);
       const newMap = this.map.head();
       expect(newMap.get(key)).to.be.equal(stringValue);
       expect(newMap.size()).to.be.equal(1);
     });
 
-    it('last should return hashmap with only the last element', function(){
+    it('last() should return hashmap with only the last element', function(){
       initMap(this.map);
       const newMap = this.map.last();
       expect(newMap.get(anotherDifferentKey)).to.be.equal(anotherDifferentValue);
       expect(newMap.size()).to.be.equal(1);
     })
+
+    it('tail() should return the hashmap with all elements except the first', function(){
+      initMap(this.map);
+      const newMap = this.map.tail();
+      expect(newMap.get(anotherKey)).to.be.equal(anotherValue);
+      expect(newMap.get(anotherDifferentKey)).to.be.equal(anotherDifferentValue);
+      expect(newMap.size()).to.be.equal(2);
+    });
+
 
   });
 
