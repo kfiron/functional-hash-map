@@ -16,7 +16,7 @@ describe('optimized hash map', () => {
       expect(this.map.get(key)).to.be.undefined;
     });
     it('should insert and get the key which is a string', function () {
-      this.map.set(key, 'value');
+      this.map.set(key, stringValue);
       expect(this.map.get(key)).to.be.equal(stringValue);
     });
   });
@@ -53,6 +53,11 @@ describe('optimized hash map', () => {
     it('map on empty map should return empty object', function(){
       const newMap = this.map.map((k, v) => 'v');
       expect(newMap.size()).to.be.equal(0);
+    });
+    it.skip('map on map with elements should return new value', function(){
+      this.map.set(key, stringValue);
+      const newMap = this.map.map((k, v) => 'v');
+      expect(newMap.get(key)).to.be.equal(stringValue);
     });
   });
 
