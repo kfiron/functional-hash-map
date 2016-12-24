@@ -139,6 +139,14 @@ describe('optimized hash map', () => {
       expect(newMap.size()).to.be.equal(2);
     });
 
+    it('init() should return the hashmap with all elements except the last', function(){
+      initMap(this.map);
+      const newMap = this.map.init();
+      expect(newMap.get(anotherKey)).to.be.equal(anotherValue);
+      expect(newMap.get(key)).to.be.equal(stringValue);
+      expect(newMap.size()).to.be.equal(2);
+    });
+
 
   });
 
