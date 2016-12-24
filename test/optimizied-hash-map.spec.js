@@ -32,6 +32,16 @@ describe('optimized hash map', () => {
     });
   });
 
+  describe('size()', function () {
+    it('empty and size shpuld be zero', function(){
+      expect(this.map.size()).to.be.equal(0);
+    });
+    it('add element and return the correct size', function(){
+      this.map.set('key', 'value');
+      expect(this.map.size()).to.be.equal(1);
+    });
+  });
+
   describe('map()', function(){
     it('map on empty map should return empty object', function(){
       const newMap = this.map.map((k, v) => 'v');
