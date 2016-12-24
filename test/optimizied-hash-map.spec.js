@@ -21,6 +21,12 @@ describe('optimized hash map', () => {
     });
   });
 
+  describe('construct map from exiting object', function(){
+    const object = { someKey: 'someValue'};
+    const newMap = factory.newMap(object);
+    expect(newMap.get('someKey')).to.be.equal('someValue');
+  });
+
 
   describe('has()', function () {
     it('should return false for check existence using has ', function () {
