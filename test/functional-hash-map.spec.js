@@ -146,8 +146,13 @@ describe('optimized hash map', () => {
       expect(newMap.get(key)).to.be.equal(stringValue);
       expect(newMap.size()).to.be.equal(2);
     });
+  });
 
-
+  describe('toObject', function(){
+    it('toObject() should return object that represent the data', function(){
+      this.map.set(key, stringValue);
+      expect(this.map.toObject()[key]).to.be.equal(stringValue);
+    });
   });
 
 
