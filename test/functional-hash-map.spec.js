@@ -9,6 +9,8 @@ describe('optimized hash map', () => {
 
   const key = 'key';
   const stringValue = 'value';
+  const anotherKey = 'anotherKey';
+  const anotherValue = 'anotherValue';
 
 
   describe('get and set by key', function () {
@@ -74,8 +76,7 @@ describe('optimized hash map', () => {
   });
 
   describe('filter() / filterNot()', function(){
-    const anotherKey = 'anotherKey';
-    const anotherValue = 'anotherValue';
+
     it('filter for match predicate should return another map', function(){
       this.map.set(key, stringValue);
       this.map.set(anotherKey, anotherValue);
@@ -92,6 +93,16 @@ describe('optimized hash map', () => {
       const newMap = this.map.filterNot((k,v) => {
         return (k == key) && (v == stringValue);
       });
+      expect(newMap.size()).to.be.equal(1);
+      expect(newMap.get(anotherKey)).to.be.equal(anotherValue);
+    });
+  });
+
+  describe('slice()', function(){
+    it('slice map', function(){
+      this.map.set(key, stringValue);
+      this.map.set(anotherKey, anotherValue);
+      const newMap =  this.map.slice(1,2);
       expect(newMap.size()).to.be.equal(1);
       expect(newMap.get(anotherKey)).to.be.equal(anotherValue);
     });
