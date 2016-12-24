@@ -107,7 +107,7 @@ describe('optimized hash map', () => {
       expect(newMap.get(anotherKey)).to.be.equal(anotherValue);
     });
   });
-
+// some comment
 
 
 
