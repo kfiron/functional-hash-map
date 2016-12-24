@@ -73,5 +73,15 @@ describe('optimized hash map', () => {
     });
   });
 
+  describe('filter', function(){
+    it('filter for not match predicate should return the same map', function(){
+      this.map.set(key, stringValue);
+      const newMap = this.map.filter((k,v) => {
+        return (k == key) && (v == stringValue);
+      });
+      expect(newMap.get(key)).to.be.equal(stringValue);
+    });
+  });
+
 
 });
