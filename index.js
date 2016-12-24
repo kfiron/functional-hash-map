@@ -1,3 +1,3 @@
 
 
-module.exports = require('./lib/optimized-hash-map');
+module.exports = require('./lib/functional-hash-map');

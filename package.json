@@ -1,5 +1,5 @@
 {
-  "name": "optimized-hash-map",
+  "name": "functional-hash-map",
   "version": "1.0.0",
   "description": "Optimized hash map",
   "main": "index.js",
