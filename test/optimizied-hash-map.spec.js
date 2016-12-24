@@ -54,10 +54,11 @@ describe('optimized hash map', () => {
       const newMap = this.map.map((k, v) => 'v');
       expect(newMap.size()).to.be.equal(0);
     });
-    it.skip('map on map with elements should return new value', function(){
+    it('map on map with elements should return new value', function(){
       this.map.set(key, stringValue);
-      const newMap = this.map.map((k, v) => 'v');
-      expect(newMap.get(key)).to.be.equal(stringValue);
+      const otherStringValue = 'some-other-string-value';
+      const newMap = this.map.map((k, v) => otherStringValue);
+      expect(newMap.get(key)).to.be.equal(otherStringValue);
     });
   });
 
